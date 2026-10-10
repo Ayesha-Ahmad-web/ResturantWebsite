@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    background: #0c0b0a;
+    scroll-behavior: smooth;
+    overflow-x: clip;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-char text-cream font-sans antialiased;
+    overflow-x: clip;
+    min-height: 100vh;
+  }
+  /* Film grain overlay (static, cheap, non-interactive) */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    pointer-events: none;
+    opacity: 0.07;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+  section[id] {
+    scroll-margin-top: 4rem;
+  }
+  ::selection {
+    background: #ff4d1f;
+    color: #0c0b0a;
+  }
+  :focus-visible {
+    outline: 2px solid #ff7a4d;
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+  img {
+    max-width: 100%;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-[1400px] px-5 sm:px-8 lg:px-12;
+  }
+  .display-xl {
+    @apply font-display uppercase leading-[0.9] tracking-tight;
+    font-size: clamp(3rem, 11vw, 10rem);
+  }
+  .display-lg {
+    @apply font-display uppercase leading-[0.95] tracking-tight;
+    font-size: clamp(2.5rem, 7vw, 6rem);
+  }
+  .display-md {
+    @apply font-display uppercase leading-none tracking-tight;
+    font-size: clamp(1.75rem, 4vw, 3rem);
+  }
+  .eyebrow {
+    @apply text-xs font-bold uppercase tracking-[0.25em] text-ember;
+  }
+  .card-surface {
+    @apply rounded-3xl border border-white/5 bg-char-700;
+  }
+}
+
+@layer utilities {
+  .text-stroke {
+    -webkit-text-stroke: 1.5px currentColor;
+    color: transparent;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
