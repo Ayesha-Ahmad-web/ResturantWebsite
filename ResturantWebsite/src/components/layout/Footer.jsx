@@ -136,9 +136,10 @@ export default function Footer() {
       </p>
 
       <div className="border-t border-white/5">
-        <div className="container-x flex flex-col items-center justify-between gap-2 py-6 text-sm text-cream-mute sm:flex-row">
+        <div className="container-x flex flex-col items-center justify-center
+         gap-2 pt-4 text-center text-sm text-cream-mute sm:flex-row">
           <p>© {new Date().getFullYear()} {restaurant.name}. All rights reserved.</p>
-          <p>Demo website: checkout and reviews are sample content.</p>
+          <p>Demo website.</p>
         </div>
       </div>
     </footer>

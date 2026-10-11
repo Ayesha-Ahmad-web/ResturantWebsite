@@ -10,8 +10,9 @@ import CartDrawer from './components/cart/CartDrawer';
 import CartToast from './components/cart/CartToast';
 
 import Home from './pages/Home';
-import Menu from './pages/Menu';
+
 import Checkout from './pages/Checkout';
+import Menu from './pages/Menu';
 
 
 // Handles route changes + in-page hash links like "/#burgers".
@@ -62,7 +63,7 @@ export default function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/menu" element={<Menu />} />
+          <Route path="/menu" element={<Menu/>} />
           {/* <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/locations" element={<Location />} /> */}
           <Route path="/checkout" element={<Checkout />} />
