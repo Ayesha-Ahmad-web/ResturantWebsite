@@ -4,7 +4,7 @@
 const env = import.meta.env;
 
 export const restaurant = {
-  name: "STACK'D BURGER",
+  name: "STACK'D Restaurant",
   tagline: 'Built different. Bites better.',
   statement: 'Real ingredients. Big flavor. Zero compromises.',
 
@@ -38,10 +38,10 @@ export const restaurant = {
   },
 
   navLinks: [
-    { label: 'Home', to: '/#home' },
-    { label: 'Our Burgers', to: '/#burgers' },
-    { label: 'Our Story', to: '/#story' },
-    { label: 'Locations', to: '/#locations' },
+    { label: 'Home', to: '/home' },
+    { label: 'Menu', to: '/menu' },
+    { label: 'About Us', to: '/aboutus' },
+    { label: 'Locations', to: '/locations' },
   ],
 
   // Genuine configured offer. The countdown only renders when endsAt is a valid
